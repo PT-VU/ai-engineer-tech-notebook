@@ -1,0 +1,13 @@
+node_modules/
+dist/
+.taste-skill/
+.env
+.env.*
+*.pem
+*.key
+data/
+runtime/
+cookies/
+browser-profiles/
+private/
+*-check.png
