@@ -11,4 +11,5 @@ cookies/
 browser-profiles/
 private/
 blackboard/
+.wrangler/
 *-check.png
