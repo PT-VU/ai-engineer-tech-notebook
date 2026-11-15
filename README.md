@@ -25,15 +25,16 @@ npm run dev
 
 ## 发布路径
 
-长期发布方式：将这个目录放入 GitHub public repository，然后在 Cloudflare Pages 连接仓库。构建命令为 `npm run build`，输出目录为 `dist`。GitHub Pages 也可以发布同一个 `dist/` 静态输出。
+长期发布方式：将这个目录放入 GitHub public repository，然后在 Cloudflare Pages 连接仓库。构建命令为 `npm run build`，输出目录为 `dist`。Cloudflare Pages 根路径是当前推荐的正式发布目标。
+
+GitHub Pages 作为备份时，优先使用用户根站点（`<username>.github.io`）或绑定自定义域名；当前生成器使用 `/projects/`、`/writing/`、`/assets/` 这类根路径。若发布到 `https://<username>.github.io/<repo>/` 项目子路径，需要先增加可配置 `BASE_PATH` 并用真实 URL 做 smoke test。
 
 本地项目目前没有创建远程仓库、没有绑定 Cloudflare、没有购买域名，也没有部署线上站点。
 
 ## 发布前检查
 
 ```powershell
-npm run build
-npm run check
+npm run build; npm run check
 ```
 
 上线前还需要人工补齐：
