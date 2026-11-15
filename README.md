@@ -25,11 +25,13 @@ npm run dev
 
 ## 发布路径
 
-长期发布方式：将这个目录放入 GitHub public repository，然后在 Cloudflare Pages 连接仓库。构建命令为 `npm run build`，输出目录为 `dist`。Cloudflare Pages 根路径是当前推荐的正式发布目标。
+长期发布方式：GitHub public repository 作为内容与源码主仓，Cloudflare Pages 作为静态托管。构建命令为 `npm run build`，输出目录为 `dist`。Cloudflare Pages 根路径是当前推荐的正式发布目标。
 
 GitHub Pages 作为备份时，优先使用用户根站点（`<username>.github.io`）或绑定自定义域名；当前生成器使用 `/projects/`、`/writing/`、`/assets/` 这类根路径。若发布到 `https://<username>.github.io/<repo>/` 项目子路径，需要先增加可配置 `BASE_PATH` 并用真实 URL 做 smoke test。
 
-本地项目目前没有创建远程仓库、没有绑定 Cloudflare、没有购买域名，也没有部署线上站点。
+当前线上地址：[ai-engineer-tech-notebook.pages.dev](https://ai-engineer-tech-notebook.pages.dev/)。当前版本通过 Wrangler Direct Upload 发布；Cloudflare 文档说明 Direct Upload 项目不能直接切换成 Git Integration。若要开启“推送 GitHub 自动部署”，应在 Cloudflare 控制台新建 Pages 项目并选择 Connect to Git，复用本仓库和以下构建设置。
+
+GitHub public repository 和 Cloudflare Pages 已完成部署；目前尚未购买自定义域名。
 
 ## 发布前检查
 
@@ -39,7 +41,6 @@ npm run build; npm run check
 
 上线前还需要人工补齐：
 
-- 真实 GitHub repository URL；
 - 真实 LinkedIn / CV / 联系方式；
 - DecisionFlow、AgentOps、AutoApply 的公开仓库或 demo 链接；
 - 图片、logo、截图的版权与 credits；
